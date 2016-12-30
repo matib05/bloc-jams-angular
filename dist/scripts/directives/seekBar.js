@@ -26,16 +26,20 @@
 					var max = scope.max;
 					var percent = value / max * 100;
 					return percent + '%';
-				}
+				};
 				
 				scope.fillStyle = function() {
 					return { width: percentString() };
-				}
+				};
+				
+				scope.thumbStyle = function() {
+					return { left: percentString() };
+				};
 				
 				scope.onClickSeekBar = function(event) {
 					var percent = calculatePercent(seekBar, event);
 					scope.value = percent * scope.max;
-				}
+				};
 				
 				scope.trackThumb = function() {
 					
@@ -49,8 +53,8 @@
 					$document.bind('mouseup.thumb', function(event) {
 						$document.unbind('mousemove.thumb');
 						$document.unbind('mouseup.thumb');
-					})
-				}
+					});
+				};
 			}
 		};
 		
